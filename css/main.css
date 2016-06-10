@@ -1,0 +1,14 @@
+body {
+    font-family:  "Amatic SC"
+}
+ul.flags li {
+    display: inline;
+}
+img {
+    width: 175px;
+    height: 150px;
+}
+.quest {
+    font-size: 30px;
+    font-weight: bold;
+}
