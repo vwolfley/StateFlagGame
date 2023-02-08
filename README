@@ -1,1 +1,34 @@
 # State Flag Game
+
+### Free APIs
+
+- https://countryflagsapi.com/
+- https://flagsapi.com/
+- https://www.countryflagicons.com/
+- https://rapidapi.com/aptitudeapps/api/flag-status
+- https://github.com/CivilServiceUSA/us-states
+- https://rapidapi.com/aptitudeapps/api/us-states/pricing
+
+State Flag Images
+There are two sizes for each state_flag_url.
+
+idaho-small.png ( all small flags are 150 x 100 pixels )
+idaho-large.png ( all large flags are 600 x 400 pixels )
+
+State Seal Images
+There are two sizes for each state_seal_url.
+
+california-small.png ( vary in size & shape )
+california-large.png ( vary in size & shape )
+
+State Map Images
+There are two sizes for each map_image_url.
+
+delaware-small.png ( all small maps are 137 x 100 pixels )
+delaware-large.png ( all large maps are 756 x 550 pixels )
+
+
+examples
+https://jsfiddle.net/ricoshae/dt7w531u/42/
+
+https://vectorjs.org/examples/state-quiz/

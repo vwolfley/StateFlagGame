@@ -1,128 +1,112 @@
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html class="no-js" lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta charset="utf-8" />
     <title>State Flags</title>
+    <meta name="description" content="Geography Game" />
+    <meta name="author" content="vern wolfley" />
+    <link
+      type="text/plain"
+      rel="author"
+      href="http://vwolfley.github.io/TestGeographyMemory/humans.txt"
+    />
+    <meta name="contact" content="@vernwolfley" />
+    <meta name="url" content="http://vwolfley.github.io/TestGeographyMemory/" />
+    <meta name="creation-date" content="10/11/2013" />
+    <meta name="revision-date" content="05/03/2014" />
+    <meta name="version" content="0.1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="description" content="Geography Game">
-    <meta name="author" content="vern wolfley">
-    <link type="text/plain" rel="author" href="http://vwolfley.github.io/TestGeographyMemory/humans.txt">
-    <meta name="contact" content="@vernwolfley">
-    <meta name="url" content="http://vwolfley.github.io/TestGeographyMemory/">
-    <meta name="creation-date" content="10/11/2013">
-    <meta name="revision-date" content="05/03/2014">
-    <meta name="version" content="0.1.0">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
 
-    <!-- Apple-Specific Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" /> -->
 
     <!-- Load CSS -->
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Amatic+SC" />
-    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-
-<!-- Google Analytics -->
-    <script>
-      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      // ga('create', 'UA-79027856-1', 'auto');
-      // ga('send', 'pageview');
-    </script>
+    <!-- <link rel="manifest" href="site.webmanifest" /> -->
+    <meta name="theme-color" content="#fafafa" />
   </head>
-    <body>
-      <h1>Welcome to Our State Flags Game!</h1>
+  <body
+    class="text-gray-700 bg-white"
+    style="font-family: 'Source Sans Pro', sans-serif"
+  >
+    <header class="fixed w-full z-20 top-0">
+      <nav
+        class="bg-slate-100 px-2 py-6 fixed w-full left-0 border-b border-slate-100"
+      >
+        <div
+          class="container flex flex-row items-center justify-center mx-auto gap-x-4"
+        >
+          <img src="img/usa-flag.png" alt="usa-flag" class="h-12 rounded" />
+          <h1 class="self-center text-3xl font-semibold whitespace-nowrap">
+            Welcome to the State Flags Game
+          </h1>
+          <img src="img/usa-flag.png" alt="usa-flag" class="h-12 rounded" />
+        </div>
+      </nav>
+    </header>
 
-      <h2>Here you will be tested on how well you know your state flags.</h2>
+    <section>
+      <div class="flex flex-col container mx-auto">
+        <div
+          class="flex flex-row gap-4 max-w-screen-xl px-4 pt-28 pb-8 mx-auto items-center"
+        >
+          <div role="alert">
+            <div
+              class="bg-green-500 text-xl text-white font-bold rounded-t px-4 py-2 text-center"
+            >
+              Correct
+            </div>
+            <div
+              id="correctScore"
+              class="border border-t-0 text-xl text-center font-bold border-green-400 rounded-b bg-green-100 px-4 py-3 text-green-700"
+            ></div>
+          </div>
+          <div role="alert">
+            <div
+              class="bg-red-500 text-xl text-white font-bold rounded-t px-4 py-2 text-center"
+            >
+              Incorrect
+            </div>
+            <div
+              id="incorrectScore"
+              class="border text-xl text-center font-bold border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
+            ></div>
+          </div>
 
-      <div class="quest">
-        Find State Flag for...<input>
+          <div
+            class="col-span-3 bg-blue-100 text-blue-700 px-4 py-3"
+          >
+            <div id="questionBox" class="flex flex-row content-center">
+              <p class="text-2xl font-semibold">Find State Flag for:</p>
+              <span
+                id="questionText"
+                class="text-2xl font-semibold pl-4"
+              ></span>
+            </div>
+          </div>
+          <button id="startGame" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-600 rounded">Restart Game</button>
+        </div>
       </div>
+    </section>
 
-      <div>
-        <ul class="flags">
-          <li><img src="img/Idaho.svg.png"><li>
-          <li><img src="img/North_Dakota.svg.png"></li>
-          <li><img src="img/Iowa.svg.png"></li>
-          <li><img src="img/Wyoming.svg.png"></li>
-          <li><img src="img/Connecticut.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Indiana.svg.png"></li>
-          <li><img src="img/Maine.svg.png"></li>
-          <li><img src="img/Maryland.svg.png"></li>
-          <li><img src="img/Michigan.svg.png"></li>
-          <li><img src="img/Montana.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Nevada.svg.png"></li>
-          <li><img src="img/New_Hampshire.svg.png"></li>
-          <li><img src="img/New_Jersey.svg.png"></li>
-          <li><img src="img/New_Mexico.svg.png"></li>
-          <li><img src="img/North_Carolina.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Oklahoma.svg.png"></li>
-          <li><img src="img/Pennsylvania.svg.png"></li>
-          <li><img src="img/South_Carolina.svg.png"></li>
-          <li><img src="img/Texas.svg.png"></li>
-          <li><img src="img/Wisconsin.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Louisiana.svg.png"></li>
-          <li><img src="img/Massachusetts.svg.png"></li>
-          <li><img src="img/Nebraska.svg.png"></li>
-          <li><img src="img/Oregon_(reverse).svg.png"></li>
-          <li><img src="img/Tennessee.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Washington.svg.png"></li>
-          <li><img src="img/Kentucky.svg.png"></li>
-          <li><img src="img/West_Virginia.svg.png"></li>
-          <li><img src="img/Alaska.svg.png"></li>
-          <li><img src="img/California.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Connecticut.svg.png"></li>
-          <li><img src="img/Delaware.svg.png"></li>
-          <li><img src="img/Alabama.svg.png"></li>
-          <li><img src="img/Arizona.svg.png"></li>
-          <li><img src="img/Arkansas.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Colorado.svg.png"></li>
-          <li><img src="img/Georgia.svg.png"></li>
-          <li><img src="img/Utah.svg.png"></li>
-          <li><img src="img/Vermont.svg.png"></li>
-          <li><img src="img/Florida.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Hawaii.svg.png"></li>
-          <li><img src="img/Illinois.svg.png"></li>
-          <li><img src="img/Kansas.svg.png"></li>
-          <li><img src="img/Minnesota.svg.png"></li>
-          <li><img src="img/Mississippi.svg.png"></li>
-        </ul>
-        <ul class="flags">
-          <li><img src="img/Missouri.svg.png"></li>
-          <li><img src="img/New_York.svg.png"></li>
-          <li><img src="img/Ohio.svg.png"></li>
-          <li><img src="img/Rhode_Island.svg.png"></li>
-          <li><img src="img/South_Dakota.svg.png"></li>
-        </ul>
-      </div>
+    <section>
+      <div
+        id="flags"
+        class="container px-4 py-8 mx-auto grid grid-cols-5 gap-4 justify-center"
+      ></div>
+    </section>
+    <footer class="bg-white dark:bg-gray-800">
+      <div class="max-w-screen-xl p-4 py-6 mx-auto"></div>
+    </footer>
 
-      <!-- Core JavaScript
-      ============================================================================================================ -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <!-- // <script src="js/plugins.js"></script> -->
-      <!-- // <script src="js/main.js"></script> -->
-
-    </body>
+    <!-- JavaScript ---->
+    <script src="js/main.js" type="module"></script>
+  </body>
 </html>

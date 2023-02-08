@@ -1,0 +1,252 @@
+[
+    {
+        "num": 1,
+        "name": "Alabama",
+        "flag": "Alabama.svg.png"
+    },
+    {
+        "num": 2,
+        "name": "Alaska",
+        "flag": "Alaska.svg.png"
+    },
+    {
+        "num": 3,
+        "name": "Arizona",
+        "flag": "Arizona.svg.png"
+    },
+    {
+        "num": 4,
+        "name": "Arkansas",
+        "flag": "Arkansas.svg.png"
+    },
+    {
+        "num": 5,
+        "name": "California",
+        "flag": "California.svg.png"
+    },
+    {
+        "num": 6,
+        "name": "Colorado",
+        "flag": "Colorado.svg.png"
+    },
+    {
+        "num": 7,
+        "name": "Connecticut",
+        "flag": "Connecticut.svg.png"
+    },
+    {
+        "num": 8,
+        "name": "Delaware",
+        "flag": "Delaware.svg.png"
+    },
+    {
+        "num": 9,
+        "name": "Florida",
+        "flag": "Florida.svg.png"
+    },
+    {
+        "num": 10,
+        "name": "Georgia",
+        "flag": "Georgia.svg.png"
+    },
+    {
+        "num": 11,
+        "name": "Hawaii",
+        "flag": "Hawaii.svg.png"
+    },
+    {
+        "num": 12,
+        "name": "Idaho",
+        "flag": "Idaho.svg.png"
+    },
+    {
+        "num": 13,
+        "name": "Illinois",
+        "flag": "Illinois.svg.png"
+    },
+    {
+        "num": 14,
+        "name": "Indiana",
+        "flag": "Indiana.svg.png"
+    },
+    {
+        "num": 15,
+        "name": "Iowa",
+        "flag": "Iowa.svg.png"
+    },
+    {
+        "num": 16,
+        "name": "Kansas",
+        "flag": "Kansas.svg.png"
+    },
+    {
+        "num": 17,
+        "name": "Kentucky",
+        "flag": "Kentucky.svg.png"
+    },
+    {
+        "num": 18,
+        "name": "Louisiana",
+        "flag": "Louisiana.svg.png"
+    },
+    {
+        "num": 19,
+        "name": "Maine",
+        "flag": "Maine.svg.png"
+    },
+    {
+        "num": 20,
+        "name": "Maryland",
+        "flag": "Maryland.svg.png"
+    },
+    {
+        "num": 21,
+        "name": "Massachusetts",
+        "flag": "Massachusetts.svg.png"
+    },
+    {
+        "num": 22,
+        "name": "Michigan",
+        "flag": "Michigan.svg.png"
+    },
+    {
+        "num": 23,
+        "name": "Minnesota",
+        "flag": "Minnesota.svg.png"
+    },
+    {
+        "num": 24,
+        "name": "Mississippi",
+        "flag": "Mississippi.svg.png"
+    },
+    {
+        "num": 25,
+        "name": "Missouri",
+        "flag": "Missouri.svg.png"
+    },
+    {
+        "num": 26,
+        "name": "Montana",
+        "flag": "Montana.svg.png"
+    },
+    {
+        "num": 27,
+        "name": "Nebraska",
+        "flag": "Nebraska.svg.png"
+    },
+    {
+        "num": 28,
+        "name": "Nevada",
+        "flag": "Nevada.svg.png"
+    },
+    {
+        "num": 29,
+        "name": "New Hampshire",
+        "flag": "New_Hampshire.svg.png"
+    },
+    {
+        "num": 30,
+        "name": "New Jersey",
+        "flag": "New_Jersey.svg.png"
+    },
+    {
+        "num": 31,
+        "name": "New Mexico",
+        "flag": "New_Mexico.svg.png"
+    },
+    {
+        "num": 32,
+        "name": "New York",
+        "flag": "New_York.svg.png"
+    },
+    {
+        "num": 33,
+        "name": "North Carolina",
+        "flag": "North_Carolina.svg.png"
+    },
+    {
+        "num": 34,
+        "name": "North Dakota",
+        "flag": "North_Dakota.svg.png"
+    },
+    {
+        "num": 35,
+        "name": "Ohio",
+        "flag": "Ohio.svg.png"
+    },
+    {
+        "num": 36,
+        "name": "Oklahoma",
+        "flag": "Oklahoma.svg.png"
+    },
+    {
+        "num": 37,
+        "name": "Oregon",
+        "flag": "Oregon_(reverse).svg.png"
+    },
+    {
+        "num": 38,
+        "name": "Pennsylvania",
+        "flag": "Pennsylvania.svg.png"
+    },
+    {
+        "num": 39,
+        "name": "Rhode Island",
+        "flag": "Rhode_Island.svg.png"
+    },
+    {
+        "num": 40,
+        "name": "South Carolina",
+        "flag": "South_Carolina.svg.png"
+    },
+    {
+        "num": 41,
+        "name": "South Dakota",
+        "flag": "South_Dakota.svg.png"
+    },
+    {
+        "num": 42,
+        "name": "Tennessee",
+        "flag": "Tennessee.svg.png"
+    },
+    {
+        "num": 43,
+        "name": "Texas",
+        "flag": "Texas.svg.png"
+    },
+    {
+        "num": 44,
+        "name": "Utah",
+        "flag": "Utah.svg.png"
+    },
+    {
+        "num": 45,
+        "name": "Vermont",
+        "flag": "Vermont.svg.png"
+    },
+    {
+        "num": 46,
+        "name": "Virginia",
+        "flag": "Virginia.svg.png"
+    },
+    {
+        "num": 47,
+        "name": "Washington",
+        "flag": "Washington.svg.png"
+    },
+    {
+        "num": 48,
+        "name": "West Virginia",
+        "flag": "West_Virginia.svg.png"
+    },
+    {
+        "num": 49,
+        "name": "Wisconsin",
+        "flag": "Wisconsin.svg.png"
+    },
+    {
+        "num": 50,
+        "name": "Wyoming",
+        "flag": "Wyoming.svg.png"
+    }
+]
