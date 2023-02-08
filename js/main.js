@@ -12,31 +12,32 @@ document.getElementById("incorrectScore").innerText = incorrectScore;
 let questions = flags.map((state) => state.name);
 // console.log(questions);
 
-hideButton();
-shuffle(flags);
+function createFlags() {
+  hideButton();
+  shuffle(flags);
 
-flags.forEach(function (flags) {
-  const img = flags.flag;
-  // create div tag
-  const bTag = document.createElement("button");
-  bTag.type = "button";
-  bTag.onclick = checkAnswer;
-  // bTag.id= flags.name;
-  bTag.value = flags.name;
-  bTag.className =
-    "p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 cursor-pointer";
-  // create img tag
-  const image = document.createElement("img");
-  image.src = "img/states/" + img;
-  image.setAttribute("name", flags.name);
-  image.setAttribute("alt", flags.name + " flag");
-  image.style = "width:150px;height:100px;";
-  image.className = "rounded-lg w-full h-full mx-auto border border-gray-200";
-  bTag.append(image);
-  document.getElementById("flags").appendChild(bTag);
-});
+  flags.forEach((flag) => {
+    const img = flag.flag;
+    // create div tag
+    const bTag = document.createElement("button");
+    bTag.type = "button";
+    bTag.onclick = checkAnswer;
+    // bTag.id= flags.name;
+    bTag.value = flag.name;
+    bTag.className =
+      "p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 cursor-pointer";
+    // create img tag
+    const image = document.createElement("img");
+    image.src = "img/states/" + img;
+    image.setAttribute("name", flag.name);
+    image.setAttribute("alt", flag.name + " flag");
+    image.style = "width:150px;height:100px;";
+    image.className = "rounded-lg w-full h-full mx-auto border border-gray-200";
+    bTag.append(image);
+    document.getElementById("flags").appendChild(bTag);
+  });
+}
 
-showQuestion(questions);
 function showQuestion(array) {
   let q = array[Math.floor(Math.random() * questions.length)];
   document.getElementById("questionText").innerText = q;
@@ -76,7 +77,15 @@ restart.addEventListener("click", function () {
   answered.length = 0;
   correctCounter = 0;
   incorrectCounter = 0;
-  shuffle(flags);
+  removeFlags();
+  createFlags();
   showQuestion(questions);
-  hideButton();
 });
+
+function removeFlags() {
+  let e = document.getElementById("flags");
+  e.replaceChildren();
+}
+
+createFlags();
+showQuestion(questions);
