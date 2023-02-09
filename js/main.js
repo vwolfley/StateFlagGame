@@ -1,205 +1,91 @@
-var states =
+import flags from "../data/data.json" assert { type: "json" };
+import shuffle from "./shuffle.js";
+import hideButton from "./hideButton.js";
 
-    {
-        "States": [{
-            "NUM": 1,
-            "Name": "Alabama",
-            "Flag": "Alabama.svg.png"
-        }, {
-            "NUM": 2,
-            "Name": "Alaska",
-            "Flag": "Alaska.svg.png"
-        }, {
-            "NUM": 3,
-            "Name": "Arizona",
-            "Flag": "Arizona.svg.png"
-        }, {
-            "NUM": 4,
-            "Name": "Arkansas",
-            "Flag": "Arkansas.svg.png"
-        }, {
-            "NUM": 5,
-            "Name": "California",
-            "Flag": "California.svg.png"
-        }, {
-            "NUM": 6,
-            "Name": "Colorado",
-            "Flag": "Colorado.svg.png"
-        }, {
-            "NUM": 7,
-            "Name": "Connecticut",
-            "Flag": "Connecticut.svg.png"
-        }, {
-            "NUM": 8,
-            "Name": "Delaware",
-            "Flag": "Delaware.svg.png"
-        }, {
-            "NUM": 9,
-            "Name": "Florida",
-            "Flag": "Florida.svg.png"
-        }, {
-            "NUM": 10,
-            "Name": "Georgia",
-            "Flag": "Georgia.svg.png"
-        }, {
-            "NUM": 11,
-            "Name": "Hawaii",
-            "Flag": "Hawaii.svg.png"
-        }, {
-            "NUM": 12,
-            "Name": "Idaho",
-            "Flag": "Idaho.svg.png"
-        }, {
-            "NUM": 13,
-            "Name": "Illinois",
-            "Flag": "Illinois.svg.png"
-        }, {
-            "NUM": 14,
-            "Name": "Indiana",
-            "Flag": "Indiana.svg.png"
-        }, {
-            "NUM": 15,
-            "Name": "Iowa",
-            "Flag": "Iowa.svg.png"
-        }, {
-            "NUM": 16,
-            "Name": "Kansas",
-            "Flag": "Kansas.svg.png"
-        }, {
-            "NUM": 17,
-            "Name": "Kentucky",
-            "Flag": "Kentucky.svg.png"
-        }, {
-            "NUM": 18,
-            "Name": "Louisiana",
-            "Flag": "Louisiana.svg.png"
-        }, {
-            "NUM": 19,
-            "Name": "Maine",
-            "Flag": "Maine.svg.png"
-        }, {
-            "NUM": 20,
-            "Name": "Maryland",
-            "Flag": "Maryland.svg.png"
-        }, {
-            "NUM": 21,
-            "Name": "Massachusetts",
-            "Flag": "Massachusetts.svg.png"
-        }, {
-            "NUM": 22,
-            "Name": "Michigan",
-            "Flag": "Michigan.svg.png"
-        }, {
-            "NUM": 23,
-            "Name": "Minnesota",
-            "Flag": "Minnesota.svg.png"
-        }, {
-            "NUM": 24,
-            "Name": "Mississippi",
-            "Flag": "Mississippi.svg.png"
-        }, {
-            "NUM": 25,
-            "Name": "Missouri",
-            "Flag": "Missouri.svg.png"
-        }, {
-            "NUM": 26,
-            "Name": "Montana",
-            "Flag": "Montana.svg.png"
-        }, {
-            "NUM": 27,
-            "Name": "Nebraska",
-            "Flag": "Nebraska.svg.png"
-        }, {
-            "NUM": 28,
-            "Name": "Nevada",
-            "Flag": "Nevada.svg.png"
-        }, {
-            "NUM": 29,
-            "Name": "New_Hampshire",
-            "Flag": "New_Hampshire.svg.png"
-        }, {
-            "NUM": 30,
-            "Name": "New_Jersey",
-            "Flag": "New_Jersey.svg.png"
-        }, {
-            "NUM": 31,
-            "Name": "New_Mexico",
-            "Flag": "New_Mexico.svg.png"
-        }, {
-            "NUM": 32,
-            "Name": "New_York",
-            "Flag": "New_York.svg.png"
-        }, {
-            "NUM": 33,
-            "Name": "North_Carolina",
-            "Flag": "North_Carolina.svg.png"
-        }, {
-            "NUM": 34,
-            "Name": "North_Dakota",
-            "Flag": "North_Dakota.svg.png"
-        }, {
-            "NUM": 35,
-            "Name": "Ohio",
-            "Flag": "Ohio.svg.png"
-        }, {
-            "NUM": 36,
-            "Name": "Oklahoma",
-            "Flag": "Oklahoma.svg.png"
-        }, {
-            "NUM": 37,
-            "Name": "Oregon",
-            "Flag": "Oregon_(reverse).svg.png"
-        }, {
-            "NUM": 38,
-            "Name": "Pennsylvania",
-            "Flag": "Pennsylvania.svg.png"
-        }, {
-            "NUM": 39,
-            "Name": "Rhode_Island",
-            "Flag": "Rhode_Island.svg.png"
-        }, {
-            "NUM": 40,
-            "Name": "South_Carolina",
-            "Flag": "South_Carolina.svg.png"
-        }, {
-            "NUM": 41,
-            "Name": "South_Dakota",
-            "Flag": "South_Dakota.svg.png"
-        }, {
-            "NUM": 42,
-            "Name": "Tennessee",
-            "Flag": "Tennessee.svg.png"
-        }, {
-            "NUM": 43,
-            "Name": "Texas",
-            "Flag": "Texas.svg.png"
-        }, {
-            "NUM": 44,
-            "Name": "Utah",
-            "Flag": "Utah.svg.png"
-        }, {
-            "NUM": 45,
-            "Name": "Vermont",
-            "Flag": "Vermont.svg.png"
-        }, {
-            "NUM": 46,
-            "Name": "Virginia",
-            "Flag": "Virginia.svg.png"
-        }, {
-            "NUM": 47,
-            "Name": "Washington",
-            "Flag": "Washington.svg.png"
-        }, {
-            "NUM": 48,
-            "Name": "West_Virginia",
-            "Flag": "West_Virginia.svg.png"
-        }, {
-            "NUM": 49,
-            "Name": "W",
-            "Flag": "Wisconsin.svg.png"
-        }, {
-            "NUM": 50,
-            "Name": "Wyoming",
-            "Flag": "Wyoming.svg.png"
-        }]
-    }
+let correctCounter = 0;
+let correctScore = 0;
+document.getElementById("correctScore").innerText = correctScore;
+let incorrectCounter = 0;
+let incorrectScore = 0;
+document.getElementById("incorrectScore").innerText = incorrectScore;
+
+let questions = flags.map((state) => state.name);
+// console.log(questions);
+
+function createFlags() {
+  hideButton();
+  shuffle(flags);
+
+  flags.forEach((flag) => {
+    const img = flag.flag;
+    // create div tag
+    const bTag = document.createElement("button");
+    bTag.type = "button";
+    bTag.onclick = checkAnswer;
+    // bTag.id= flags.name;
+    bTag.value = flag.name;
+    bTag.className =
+      "p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 cursor-pointer";
+    // create img tag
+    const image = document.createElement("img");
+    image.src = "img/states/" + img;
+    image.setAttribute("name", flag.name);
+    image.setAttribute("alt", flag.name + " flag");
+    image.style = "width:150px;height:100px;";
+    image.className = "rounded-lg w-full h-full mx-auto border border-gray-200";
+    bTag.append(image);
+    document.getElementById("flags").appendChild(bTag);
+  });
+}
+
+function showQuestion(array) {
+  let q = array[Math.floor(Math.random() * questions.length)];
+  document.getElementById("questionText").innerText = q;
+}
+
+function checkAnswer() {
+  let value = this.value;
+  // console.log(value);
+  if (value == document.getElementById("questionText").innerHTML) {
+    correctCounter++;
+    correctScore = correctCounter.toString();
+    document.getElementById("correctScore").innerText = correctScore;
+    removeQuestion(value);
+    // console.log("YES", correctCounter);
+  } else {
+    incorrectCounter++;
+    incorrectScore = incorrectCounter.toString();
+    document.getElementById("incorrectScore").innerText = incorrectScore;
+    // console.log("NO", incorrectCounter);
+  }
+  hideButton();
+}
+
+let answered = [];
+function removeQuestion(value) {
+  answered.push(value);
+  let newQuestions = questions.filter(function (item) {
+    return !answered.includes(item);
+  });
+  showQuestion(newQuestions);
+}
+
+let restart = document.getElementById("startGame");
+restart.addEventListener("click", function () {
+  document.getElementById("correctScore").innerText = "0";
+  document.getElementById("incorrectScore").innerText = "0";
+  answered.length = 0;
+  correctCounter = 0;
+  incorrectCounter = 0;
+  removeFlags();
+  createFlags();
+  showQuestion(questions);
+});
+
+function removeFlags() {
+  let e = document.getElementById("flags");
+  e.replaceChildren();
+}
+
+createFlags();
+showQuestion(questions);
